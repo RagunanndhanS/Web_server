@@ -1,4 +1,3 @@
-
 // fetch('http://puzzle.mead.io/puzzle').then(
 //     (response) => {
 //         response.json().then((data) => {
@@ -20,16 +19,16 @@ weatherForm.addEventListener('submit', (event) => {
     datamsg.textContent = 'Loading...'
     errormsg.textContent = ''
 
-    fetch('http://localhost:3000/weather?address=' + location).then(
+    fetch('/weather?address=' + location).then(
         (response) => {
             response.json().then((data) => {
                 if (data.error) {
                     console.log(data.error)
                     errormsg.textContent = data.error
-                    datamsg.textContent=''
+                    datamsg.textContent = ''
 
                 } else {
-                    datamsg.innerHTML = 'Location : ' + data.location + '<br><br>' + 'Forecast : '  +data.forecast
+                    datamsg.innerHTML = 'Location : ' + data.location + '<br><br>' + 'Forecast : ' + data.forecast
                     console.log(data.location)
                     console.log(data.forecast)
                 }
