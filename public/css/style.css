@@ -5,8 +5,10 @@ body{
   padding:0 16px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-    background-color: #5a739bc1;
+  max-height: 100vh;
+  min-height: 800px;
+    background-color: #f9fafcc1;
+  
 
  
 }
@@ -21,7 +23,7 @@ body{
 .main-content
 {
   flex-grow:1 ;
-    background-color: #c9d3e1c1;
+    background-color: #ffffffc1;
 
 }
 h2{
@@ -32,7 +34,13 @@ h2{
 }
 
 .portrait {
-    width: 250px;
+    display: flex;
+  flex-direction: column;
+  max-width:700px;
+  margin-left: -30px;
+    background-color: #5a739bc1;
+
+
 }
  header a
 {

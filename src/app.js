@@ -28,15 +28,15 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Page',
+        title: 'About Us',
         name: 'Ragu',
-        contact: 7598969189
+        contact:'not available'
     })
 })
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpMessage: 'I Will Help You',
-        title: 'Help Page',
+        helpMessage: 'You can find the weather in your location',
+        title: 'Help',
         name: 'Ragu'
 
     })
@@ -61,7 +61,7 @@ app.get('/weather', (req, res) => {
 
     if (!req.query.address) {
         return res.send({
-            error: 'you must provide a address in query'
+            error: 'you must provide a address or location in search'
         })
     }
     geocode(req.query.address, (error, { latitude, longitude, location } = {}) => {
