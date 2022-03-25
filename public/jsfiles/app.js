@@ -23,14 +23,15 @@ weatherForm.addEventListener('submit', (event) => {
         (response) => {
             response.json().then((data) => {
                 if (data.error) {
-                    console.log(data.error)
+                    // console.log(data.error)
                     errormsg.textContent = data.error
                     datamsg.textContent = ''
 
                 } else {
-                    datamsg.innerHTML = 'Location : ' + data.location + '<br><br>' + 'Forecast : ' + data.forecast
-                    console.log(data.location)
-                    console.log(data.forecast)
+                   
+                    datamsg.innerHTML = 'Location : ' + data.location + '<br> Observed Time :' + data.forecast.time + '<br><br>' + 'Forecast : ' + data.forecast.dataString
+                        // console.log(data.location)
+                        // console.log(data.forecast)
                 }
             })
         }

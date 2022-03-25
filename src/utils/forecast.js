@@ -17,9 +17,13 @@ const forecast = (latitude, longitude, callback) => {
                 S: 'South'
             }
             let direction = ''
-            data.wind_dir.split('', '4').forEach((dir) => {direction=direction+' '+directionexp[dir]})
-         
-            callback(undefined, 'Your location has a temperature of ' + data.temperature + ' farenheat, it will feel like ' + data.feelslike + " farenheat. Today's climate will be " + data.weather_descriptions[0] + ". Humidity is " + data.humidity + " %. Wind flow will be " +direction+ " direction with the speed of " + data.wind_speed + "km/h.")
+            // console.log(data)
+            data.wind_dir.split('', '4').forEach((dir) => { direction = direction + ' ' + directionexp[dir] })
+            const forecastdata = {
+                dataString: 'Your location has a temperature of ' + data.temperature + ' farenheat, it will feel like ' + data.feelslike + " farenheat. Today's climate will be " + data.weather_descriptions[0] + ". Humidity is " + data.humidity + " %. Wind flow will be " + direction + " direction with the speed of " + data.wind_speed + "km/h.",
+                time: data.observation_time
+            }
+            callback(undefined, forecastdata)
         }
     })
 }
