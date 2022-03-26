@@ -14,7 +14,7 @@ const forecast = (latitude, longitude, callback) => {
             const minute = parseInt(localtime[1])
             let time=''
             if (hour > 12) {
-                 time = `${hour/2}:${minute} PM`
+                 time = `${hour-12}:${minute} PM`
             } else {
                  time = `${hour}:${minute} AM`
             }
